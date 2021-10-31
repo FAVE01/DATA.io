@@ -51,7 +51,7 @@
     "js-yaml": "^3.12.1",
     "listr": "^0.14.3",
     "lodash": "^4.17.20",
-    "mime-types": "^2.1.24",
+    "mime-types": "^2.1.33",
     "moment": "^2.27.0",
     "prettier": "^2.1.2",
     "request": "^2.88.2",
