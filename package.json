@@ -11,9 +11,10 @@
     "test": "mocha \"./{,!(node_modules)/**}/*.test.ts\"",
     "lint": "eslint . --ext .ts --fix",
     "build": "tsc",
-    "prepublish": "npm run build",
+    "prepublish": "yarn run snyk-protect && npm run build",
     "tag-and-publish": "npm version patch && git push origin master && git push --tags",
-    "pre-commit": "npm run lint && npm run test"
+    "pre-commit": "npm run lint && npm run test",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -36,7 +37,7 @@
   "homepage": "https://github.com/dappnode/DAppNodeSDK#readme",
   "dependencies": {
     "@octokit/rest": "^18.0.12",
-    "ajv": "^6.12.2",
+    "ajv": "^6.12.3",
     "ajv-errors": "^1.0.1",
     "async-retry": "^1.2.3",
     "chalk": "^2.4.2",
@@ -45,14 +46,14 @@
     "ethers": "^5.0.3",
     "figlet": "^1.2.3",
     "form-data": "^3.0.0",
-    "got": "^10.5.5",
+    "got": "^11.8.5",
     "image-size": "^0.8.1",
     "inquirer": "^6.2.1",
     "js-yaml": "^3.12.1",
     "listr": "^0.14.3",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "mime-types": "^2.1.24",
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "prettier": "^2.1.2",
     "request": "^2.88.2",
     "rimraf": "^3.0.2",
@@ -60,7 +61,8 @@
     "source-map-support": "^0.5.19",
     "tar-fs": "^2.0.0",
     "timestring": "^5.0.1",
-    "yargs": "^13.2.4"
+    "yargs": "^13.2.4",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@types/ajv-errors": "^1.0.2",
@@ -91,5 +93,6 @@
   },
   "engines": {
     "node": ">=8.0.0"
-  }
+  },
+  "snyk": true
 }
